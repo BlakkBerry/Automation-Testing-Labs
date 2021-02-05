@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.VisualBasic.FileIO;
 using NUnit.Framework;
+using SourceCode;
 
 
 namespace Practice1NUnit
@@ -22,32 +23,24 @@ namespace Practice1NUnit
             Console.WriteLine("Cruel World");
         }
 
-        // TASK 6
-        private static double CallMyFunction(double x)
-        {
-            var denominator = x * x - 5 * x;
-
-            return 1 / denominator.CompareTo(0) == 0 ? 0 : denominator;
-        }
-
         // TASK 7 - DATA DRIVEN
         [Test]
         public void CallMyFunction_GreaterThan5_PositiveValue()
         {
-            Console.WriteLine("Test Started - " + GetEstTime());
+            Console.WriteLine("Test Started - " + Lab1Utils.GetEstTime());
             
-            var res = CallMyFunction(6);
+            var res = Lab1Utils.CallMyFunction(6);
 
             Assert.That(res, Is.Positive);
             
-            Console.WriteLine("Test Ended - " + GetEstTime());
+            Console.WriteLine("Test Ended - " + Lab1Utils.GetEstTime());
         }
 
         // TASK 7 - DATA DRIVEN
         [Test]
         public void CallMyFunction_LowerThan5_NegativeValue()
         {
-            var res = CallMyFunction(4);
+            var res = Lab1Utils.CallMyFunction(4);
 
             Assert.That(res, Is.Negative);
         }
@@ -58,7 +51,7 @@ namespace Practice1NUnit
         {
             Int32 expectedFirstAge = 20;
             
-            var firstAgeFromCsv = GetFirstAgeFromCsv();
+            var firstAgeFromCsv = Lab1Utils.GetFirstAgeFromCsv();
 
             Assert.AreEqual(expectedFirstAge, firstAgeFromCsv);
         }
@@ -71,7 +64,7 @@ namespace Practice1NUnit
 
             if (value == 5)
             {
-                Assert.Throws<DivideByZeroException>(() => CallMyFunction(value));
+                Assert.Throws<DivideByZeroException>(() => Lab1Utils.CallMyFunction(value));
             }
             else
             {
@@ -93,7 +86,7 @@ namespace Practice1NUnit
         [Test]
         public void MyFunction_ValueOf5_DivideByZeroException()
         {
-            Assert.Throws<DivideByZeroException>(() => CallMyFunction(5));
+            Assert.Throws<DivideByZeroException>(() => Lab1Utils.CallMyFunction(5));
         }
         
         private static IEnumerable<int> GetRandomNumber()
@@ -104,39 +97,6 @@ namespace Practice1NUnit
             {
                 yield return random.Next(Int32.MinValue, Int32.MaxValue);
             }
-        }
-
-        private static DateTime GetEstTime()
-        {
-            var timeUtc = DateTime.UtcNow;
-            TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-            return TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
-        }
-
-        public int GetFirstAgeFromCsv()
-        {
-            List<int> ages = new List<int>();
-            using (TextFieldParser parser =
-                new TextFieldParser(@"C:\Users\blakk\OneDrive\Desktop\users.csv"))
-            {
-                parser.TextFieldType = FieldType.Delimited;
-                parser.SetDelimiters(",");
-                while (!parser.EndOfData)
-                {
-                    string[] fields = parser.ReadFields();
-
-                    foreach (var field in fields)
-                    {
-                        try
-                        {
-                            return Int32.Parse(field);
-                        }
-                        catch (Exception e) { }
-                    }
-                }
-            }
-
-            return 0;
         }
     }
 }
