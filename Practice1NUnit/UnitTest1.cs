@@ -51,10 +51,19 @@ namespace Practice1NUnit
 
             Assert.That(res, Is.Negative);
         }
-
-        // TODO read from csv
         
-        // TASK 7 and 8 - RANDOM 100 TIMES
+        // TASK 7 - DATA DRIVEN WHICH READS FROM CSV
+        [Test]
+        public void MyFunction_FirstAgeFromCsv_ValidNumberOrDivideByZeroException()
+        {
+            Int32 expectedFirstAge = 20;
+            
+            var firstAgeFromCsv = GetFirstAgeFromCsv();
+
+            Assert.AreEqual(expectedFirstAge, firstAgeFromCsv);
+        }
+
+        // TASK 7 and 8 - DATA DRIVEN, RANDOM 100 TIMES
         [Test, TestCaseSource(nameof(GetRandomNumber))]
         public void MyFunction_RandomValue_ValidDoubleOrDivideByZeroException(int value)
         {
@@ -86,8 +95,7 @@ namespace Practice1NUnit
         {
             Assert.Throws<DivideByZeroException>(() => CallMyFunction(5));
         }
-
-
+        
         private static IEnumerable<int> GetRandomNumber()
         {
             var random = new Random();
@@ -105,25 +113,30 @@ namespace Practice1NUnit
             return TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
         }
 
-        public void DataDrivenFromCsv()
+        public int GetFirstAgeFromCsv()
         {
             List<int> ages = new List<int>();
             using (TextFieldParser parser =
-                new TextFieldParser(@"C:\Users\blakk\Projects\Automatic Testing\AT-Lab1\users.csv"))
+                new TextFieldParser(@"C:\Users\blakk\OneDrive\Desktop\users.csv"))
             {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(",");
                 while (!parser.EndOfData)
                 {
                     string[] fields = parser.ReadFields();
-                    if (fields == null) return;
 
                     foreach (var field in fields)
                     {
-                        Console.WriteLine(Int32.Parse(field[2].ToString()));
+                        try
+                        {
+                            return Int32.Parse(field);
+                        }
+                        catch (Exception e) { }
                     }
                 }
             }
+
+            return 0;
         }
     }
 }
