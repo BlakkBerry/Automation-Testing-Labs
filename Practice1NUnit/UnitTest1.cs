@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Microsoft.VisualBasic.FileIO;
 using NUnit.Framework;
 using SourceCode;
 
@@ -58,7 +57,7 @@ namespace Practice1NUnit
 
         // TASK 7 and 8 - DATA DRIVEN, RANDOM 100 TIMES
         [Test, TestCaseSource(nameof(GetRandomNumber))]
-        public void MyFunction_RandomValue_ValidDoubleOrDivideByZeroException(int value)
+        public void MyFunction_RandomValues_ValidDoubleOrDivideByZeroException(int value)
         {
             Console.WriteLine("Random value: " + value);
 
