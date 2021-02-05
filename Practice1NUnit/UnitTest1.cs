@@ -47,7 +47,7 @@ namespace Practice1NUnit
         
         // TASK 7 - DATA DRIVEN WHICH READS FROM CSV
         [Test]
-        public void MyFunction_FirstAgeFromCsv_ValidNumberOrDivideByZeroException()
+        public void MyFunction_FirstAgeFromCsv_ValidFirstAge()
         {
             Int32 expectedFirstAge = 20;
             

@@ -47,5 +47,13 @@ namespace SourceCode
 
             return 0;
         }
+
+        public static int getOneRandomInt()
+        {
+            var random = new Random();
+
+            return random.Next(Int32.MinValue, Int32.MaxValue);
+        }
+        
     }
 }
