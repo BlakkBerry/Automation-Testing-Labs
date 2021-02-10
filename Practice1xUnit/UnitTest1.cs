@@ -14,26 +14,22 @@ namespace Practice1xUnit
         {
             _output = output;
 
-            output.WriteLine("Hello World");
+            _output.WriteLine("Test Started - " + Lab1Utils.GetEstTime());
         }
 
         // TASK 11
         public void Dispose()
         {
-            _output.WriteLine("Cruel World");
+            _output.WriteLine("Test Ended - " + Lab1Utils.GetEstTime());
         }
 
         // TASK 7 - Data driven
         [Fact]
         public void CallMyFunction_GreaterThan5_PositiveValue()
         {
-            _output.WriteLine("Test Started - " + Lab1Utils.GetEstTime());
-
             var res = Lab1Utils.CallMyFunction(6);
 
             Assert.True(res > 0);
-
-            _output.WriteLine("Test Ended - " + Lab1Utils.GetEstTime());
         }
 
         // TASK 7 - Data driven
@@ -62,15 +58,15 @@ namespace Practice1xUnit
         public void MyFunction_RandomValues_ValidDoubleOrDivideByZeroException(int randomValue)
         {
             _output.WriteLine("Random value: " + randomValue);
-            
+
             if (randomValue == 5)
             {
                 Assert.Throws<DivideByZeroException>(() => Lab1Utils.CallMyFunction(randomValue));
             }
         }
-        
+
         // TASK 9 (Retry and timeout is impossible to implement with basic xUnit functionality)
-        
+
         // TASK 10
         [Fact]
         public void MyFunction_ValueOf5_DivideByZeroException()
