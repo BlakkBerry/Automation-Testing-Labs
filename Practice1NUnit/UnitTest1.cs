@@ -8,34 +8,45 @@ namespace Practice1NUnit
 {
     public class Tests
     {
+        
+        // TASK 11
+        [OneTimeSetUp]
+        public void OneTimeSetup()
+        {
+            Console.WriteLine("Hello World");
+        }
+
+        // TASK 11
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            Console.WriteLine("Cruel World");
+        }
+        
         // TASK 11
         [SetUp]
         public void Setup()
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Test Started - " + Lab1Utils.GetEstTime());
         }
 
         // TASK 11
         [TearDown]
         public void TearDown()
         {
-            Console.WriteLine("Cruel World");
-        }
-
-        // TASK 7 - DATA DRIVEN
-        [Test]
-        public void CallMyFunction_GreaterThan5_PositiveValue()
-        {
-            Console.WriteLine("Test Started - " + Lab1Utils.GetEstTime());
-            
-            var res = Lab1Utils.CallMyFunction(6);
-
-            Assert.That(res, Is.Positive);
-            
             Console.WriteLine("Test Ended - " + Lab1Utils.GetEstTime());
         }
 
-        // TASK 7 - DATA DRIVEN
+        // TASK 7 - Data driven
+        [Test]
+        public void CallMyFunction_GreaterThan5_PositiveValue()
+        {
+            var res = Lab1Utils.CallMyFunction(6);
+
+            Assert.That(res, Is.Positive);
+        }
+
+        // TASK 7 - Data driven
         [Test]
         public void CallMyFunction_LowerThan5_NegativeValue()
         {
@@ -44,7 +55,7 @@ namespace Practice1NUnit
             Assert.That(res, Is.Negative);
         }
         
-        // TASK 7 - DATA DRIVEN WHICH READS FROM CSV
+        // TASK 7 - Data driven, which reads from csv
         [Test]
         public void MyFunction_FirstAgeFromCsv_ValidFirstAge()
         {
@@ -55,7 +66,7 @@ namespace Practice1NUnit
             Assert.AreEqual(expectedFirstAge, firstAgeFromCsv);
         }
 
-        // TASK 7 and 8 - DATA DRIVEN, RANDOM 100 TIMES
+        // TASK 7 and 8 - Data driven, 100 tests with random values
         [Test, TestCaseSource(nameof(GetRandomNumber))]
         public void MyFunction_RandomValues_ValidDoubleOrDivideByZeroException(int value)
         {

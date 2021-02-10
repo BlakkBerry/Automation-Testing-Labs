@@ -7,12 +7,12 @@ namespace Practice1xUnit
 {
     public class UnitTest1 : IDisposable
     {
-        ITestOutputHelper output;
+        private readonly ITestOutputHelper _output;
 
         // TASK 11
         public UnitTest1(ITestOutputHelper output)
         {
-            this.output = output;
+            _output = output;
 
             output.WriteLine("Hello World");
         }
@@ -20,23 +20,23 @@ namespace Practice1xUnit
         // TASK 11
         public void Dispose()
         {
-            output.WriteLine("Cruel World");
+            _output.WriteLine("Cruel World");
         }
 
-        // TASK 7 - DATA DRIVEN
+        // TASK 7 - Data driven
         [Fact]
         public void CallMyFunction_GreaterThan5_PositiveValue()
         {
-            output.WriteLine("Test Started - " + Lab1Utils.GetEstTime());
+            _output.WriteLine("Test Started - " + Lab1Utils.GetEstTime());
 
             var res = Lab1Utils.CallMyFunction(6);
 
             Assert.True(res > 0);
 
-            output.WriteLine("Test Ended - " + Lab1Utils.GetEstTime());
+            _output.WriteLine("Test Ended - " + Lab1Utils.GetEstTime());
         }
 
-        // TASK 7 - DATA DRIVEN
+        // TASK 7 - Data driven
         [Fact]
         public void CallMyFunction_LowerThan5_NegativeValue()
         {
@@ -45,23 +45,23 @@ namespace Practice1xUnit
             Assert.True(res < 0);
         }
 
-        // TASK 7 - DATA DRIVEN WHICH READS FROM CSV
+        // TASK 7 - Data driven, which reads from csv
         [Fact]
         public void MyFunction_FirstAgeFromCsv_ValidFirstAge()
         {
-            Int32 expectedFirstAge = 20;
+            const int expectedFirstAge = 20;
 
             var firstAgeFromCsv = Lab1Utils.GetFirstAgeFromCsv();
 
             Assert.Equal(expectedFirstAge, firstAgeFromCsv);
         }
 
-        // TASK 7 and 8 - DATA DRIVEN, RANDOM 100 TIMES
+        // TASK 7 and 8 - Data driven, 100 tests with random values
         [Theory]
         [Repeat(100)]
         public void MyFunction_RandomValues_ValidDoubleOrDivideByZeroException(int randomValue)
         {
-            output.WriteLine("Random value: " + randomValue);
+            _output.WriteLine("Random value: " + randomValue);
             
             if (randomValue == 5)
             {

@@ -54,6 +54,5 @@ namespace SourceCode
 
             return random.Next(Int32.MinValue, Int32.MaxValue);
         }
-        
     }
 }
