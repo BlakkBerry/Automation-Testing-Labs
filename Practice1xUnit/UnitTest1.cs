@@ -9,6 +9,8 @@ namespace Practice1xUnit
     {
         private readonly ITestOutputHelper _output;
 
+        // TASK 11 - Global setup and tear down are impossible to implement with xUnit 
+        
         // TASK 11
         public UnitTest1(ITestOutputHelper output)
         {
