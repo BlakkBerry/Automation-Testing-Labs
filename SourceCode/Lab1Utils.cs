@@ -24,7 +24,6 @@ namespace SourceCode
         
         public static int GetFirstAgeFromCsv()
         {
-            List<int> ages = new List<int>();
             using (TextFieldParser parser =
                 new TextFieldParser(@"C:\Users\blakk\OneDrive\Desktop\users.csv"))
             {

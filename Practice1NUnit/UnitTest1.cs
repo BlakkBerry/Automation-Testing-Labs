@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using Microsoft.VisualBasic.FileIO;
 using NUnit.Framework;
 using SourceCode;
 
@@ -38,32 +40,28 @@ namespace Practice1NUnit
         }
 
         // TASK 7 - Data driven
-        [Test]
-        public void CallMyFunction_GreaterThan5_PositiveValue()
+        [Test, TestCase(6)]
+        public void CallMyFunction_GreaterThan5_PositiveValue(double value)
         {
-            var res = Lab1Utils.CallMyFunction(6);
+            var res = Lab1Utils.CallMyFunction(value);
 
             Assert.That(res, Is.Positive);
         }
 
         // TASK 7 - Data driven
-        [Test]
-        public void CallMyFunction_LowerThan5_NegativeValue()
+        [Test, TestCase(4)]
+        public void CallMyFunction_LowerThan5_NegativeValue(double value)
         {
-            var res = Lab1Utils.CallMyFunction(4);
+            var res = Lab1Utils.CallMyFunction(value);
 
             Assert.That(res, Is.Negative);
         }
         
         // TASK 7 - Data driven, which reads from csv
-        [Test]
-        public void MyFunction_FirstAgeFromCsv_ValidFirstAge()
+        [Test, TestCaseSource(nameof(GetAgesFromCsv))]
+        public void MyFunction_FirstAgeFromCsv_ValidFirstAge(int age)
         {
-            Int32 expectedFirstAge = 20;
-            
-            var firstAgeFromCsv = Lab1Utils.GetFirstAgeFromCsv();
-
-            Assert.AreEqual(expectedFirstAge, firstAgeFromCsv);
+            Assert.Greater(Lab1Utils.CallMyFunction(age), 0);
         }
 
         // TASK 7 and 8 - Data driven, 100 tests with random values
@@ -106,6 +104,22 @@ namespace Practice1NUnit
             for (var i = 0; i < 100; i++)
             {
                 yield return random.Next(Int32.MinValue, Int32.MaxValue);
+            }
+        }
+        
+        public static IEnumerable GetAgesFromCsv()
+        {
+            using (TextFieldParser parser =
+                new TextFieldParser(@"C:\Users\blakk\OneDrive\Desktop\users.csv"))
+            {
+                parser.TextFieldType = FieldType.Delimited;
+                parser.SetDelimiters(",");
+                while (!parser.EndOfData)
+                {
+                    string[] fields = parser.ReadFields();
+                    
+                    yield return Int32.Parse(fields[2]);
+                }
             }
         }
     }

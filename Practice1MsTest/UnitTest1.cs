@@ -38,17 +38,17 @@ namespace Practice1MsTest
         }
 
         // TASK 7 - Data driven
-        [TestMethod]
-        public void CallMyFunction_GreaterThan5_PositiveValue()
+        [DataTestMethod, DataRow(6)]
+        public void CallMyFunction_GreaterThan5_PositiveValue(double value)
         {
-            var res = Lab1Utils.CallMyFunction(6);
+            var res = Lab1Utils.CallMyFunction(value);
 
             Assert.IsTrue(res > 0);
         }
 
         // TASK 7 - Data driven
-        [TestMethod]
-        public void CallMyFunction_LowerThan5_NegativeValue()
+        [DataTestMethod, DataRow(4)]
+        public void CallMyFunction_LowerThan5_NegativeValue(double value)
         {
             var res = Lab1Utils.CallMyFunction(4);
 
