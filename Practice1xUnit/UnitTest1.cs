@@ -26,32 +26,31 @@ namespace Practice1xUnit
         }
 
         // TASK 7 - Data driven
-        [Fact]
-        public void CallMyFunction_GreaterThan5_PositiveValue()
+        [Theory]
+        [InlineData(6)]
+        public void CallMyFunction_GreaterThan5_PositiveValue(int value)
         {
-            var res = Lab1Utils.CallMyFunction(6);
+            var res = Lab1Utils.CallMyFunction(value);
 
             Assert.True(res > 0);
         }
 
         // TASK 7 - Data driven
-        [Fact]
-        public void CallMyFunction_LowerThan5_NegativeValue()
+        [Theory]
+        [InlineData(4)]
+        public void CallMyFunction_LowerThan5_NegativeValue(int value)
         {
-            var res = Lab1Utils.CallMyFunction(4);
+            var res = Lab1Utils.CallMyFunction(value);
 
             Assert.True(res < 0);
         }
 
         // TASK 7 - Data driven, which reads from csv
-        [Fact]
-        public void MyFunction_FirstAgeFromCsv_ValidFirstAge()
+        [Theory]
+        [ClassData(typeof(CsvReader))]
+        public void MyFunction_FirstAgeFromCsv_ValidFirstAge(int age)
         {
-            const int expectedFirstAge = 20;
-
-            var firstAgeFromCsv = Lab1Utils.GetFirstAgeFromCsv();
-
-            Assert.Equal(expectedFirstAge, firstAgeFromCsv);
+            Assert.True(age > 0);
         }
 
         // TASK 7 and 8 - Data driven, 100 tests with random values
@@ -70,10 +69,10 @@ namespace Practice1xUnit
         // TASK 9 (Retry and timeout is impossible to implement with basic xUnit functionality)
 
         // TASK 10
-        [Fact]
-        public void MyFunction_ValueOf5_DivideByZeroException()
+        [Theory, InlineData(5)]
+        public void MyFunction_ValueOf5_DivideByZeroException(int criticalValue)
         {
-            Assert.Throws<DivideByZeroException>(() => Lab1Utils.CallMyFunction(5));
+            Assert.Throws<DivideByZeroException>(() => Lab1Utils.CallMyFunction(criticalValue));
         }
     }
 }
