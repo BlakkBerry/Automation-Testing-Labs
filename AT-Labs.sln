@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice1xUnit", "Practice1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice1MsTest", "Practice1MsTest\Practice1MsTest.csproj", "{AF949614-462C-4F8F-B012-2A46D6B8E200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceCode", "SourceCode\SourceCode.csproj", "{92ACB782-DF85-41D7-A5B0-3A6362C6F725}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practiсe1SourceCode", "Practiсe1SourceCode\Practiсe1SourceCode.csproj", "{92ACB782-DF85-41D7-A5B0-3A6362C6F725}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

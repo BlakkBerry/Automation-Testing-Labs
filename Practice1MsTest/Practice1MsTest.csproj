@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SourceCode\SourceCode.csproj" />
+      <ProjectReference Include="..\Practiсe1SourceCode\Practiсe1SourceCode.csproj" />
     </ItemGroup>
 
 </Project>
