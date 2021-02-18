@@ -77,7 +77,7 @@ namespace Practice2_GoogleDriveAPI
         [TestCase("failed.pdf")]
         public void Test1(string path)
         {
-            Assert.IsTrue(IsExistingPath(path));
+            Assert.IsTrue(IsExistingPath(path), "File not found!");
         }
 
 
