@@ -10,13 +10,8 @@ namespace Practice5_Parsing
 {
     public class Tests
     {
-
         private HtmlWeb _htmlWeb;
-        private const string MainUrl = "https://allitbooks.net";
-        private const string DownloadUrl = "https://allitbooks.net/download-file-";
-        private const string Categories = "//aside[@class='sidebar']//ul//a";
-        private const string Books = "//div[@class='content']//*[@class='item-list']//*[@class='post-title']//a";
-
+        
         [OneTimeSetUp]
         public void InitTests()
         {
@@ -34,56 +29,76 @@ namespace Practice5_Parsing
                 .AsParallel()
                 .ForAll(category =>
                 {
-                    Regex regex = new Regex(@"\/category\/(.+)\.html");
-                    var categoryName = regex.Match(category).Groups[1].Captures[0].Value;
-                    
                     var books = GetBooks(category);
                     books.ToList().ForEach(book =>
                     {
-                        var path = @"C:/Users/blakk/ParsedBooks/";
-                        var bookUrl = DownloadUrl + book + ".html";
-                        Directory.CreateDirectory(Path.Combine(path, categoryName));
-                        new WebClient().DownloadFile(bookUrl, $"C:/Users/blakk/ParsedBooks/{categoryName}/{book}.pdf");
+                        const string path = @"C:/Users/blakk/ParsedBooks/";
+                        Directory.CreateDirectory(Path.Combine(path, category.Name));
+                        new WebClient().DownloadFile(
+                            book.DownloadUrl,
+                            Path.Combine(path, category.Name, $"{book.Name}.pdf")
+                        );
                     });
                 });
-            
         }
 
-        private string[] GetCategories()
+        private Category[] GetCategories()
         {
-            HtmlDocument document = _htmlWeb.Load(MainUrl);
+            const string mainUrl = "https://allitbooks.net";
+            const string categoriesXPath = "//aside[@class='sidebar']//ul//a";
             
-            var categories = document.DocumentNode
-                .SelectNodes(Categories)
-                .Select(node => MainUrl + node.Attributes["href"].Value)
+            HtmlDocument document = _htmlWeb.Load(mainUrl);
+
+            Category[] categories = document.DocumentNode
+                .SelectNodes(categoriesXPath)
+                .Select(node =>
+                {
+                    var categoryUrl = node.Attributes["href"].Value;
+
+                    Regex idRegex = new Regex(@"\/category\/(.+)\.html");
+                    var categoryId = idRegex.Match(categoryUrl).Groups[1].Captures[0].Value;
+
+                    var categoryName = node.InnerText.Trim('»', ' ');
+
+                    return new Category(categoryId, mainUrl + categoryUrl, categoryName);
+                })
                 .AsParallel()
                 .ToArray();
 
             return categories;
         }
-        private string[] GetBooks(string url)
+
+        private Book[] GetBooks(Category category)
         {
-            var books = Array.Empty<string>();
-            
+            const string booksXPath = "//div[@class='content']//*[@class='item-list']//*[@class='post-title']//a";
+            var books = Array.Empty<Book>();
+
             try
             {
                 Regex regex = new Regex(@"\/(\d+)");
 
-                books = _htmlWeb.Load(url)
+                books = _htmlWeb.Load(category.Url)
                     .DocumentNode
-                    .SelectNodes(Books)
-                    .Select(node => regex.Match(node.Attributes["href"].Value)
-                        .Groups[1]
-                        .Captures[0]
-                        .Value
-                    )
+                    .SelectNodes(booksXPath)
+                    .Select(node =>
+                    {
+                        var bookUrl = node.Attributes["href"].Value;
+                        var bookId = regex.Match(bookUrl)
+                            .Groups[1]
+                            .Captures[0]
+                            .Value;
+                        var downloadUrl = $"https://allitbooks.net/download-file-{bookId}.html";
+
+                        return new Book(bookId, category, node.InnerText, bookUrl, downloadUrl);
+                    })
                     .ToArray();
             }
             catch (ArgumentNullException e)
             {
-                Console.WriteLine($"No books were found at {url}");
+                Console.WriteLine($"No books were found at category: {category.Name} with url: {category.Url}");
+                Console.WriteLine("Error message" + e.Message);
             }
-            
+
             return books;
         }
     }
