@@ -28,7 +28,7 @@ namespace Practice2_Selenium
             _driver?.Quit();
         }
 
-        [Test, Repeat(20)]
+        [Test]
         public void CheckPrice()
         {
             MainPage mainPage = new MainPage(_driver, null);
