@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice2-GoogleDriveAPI", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice4-Selenium", "Practice4-Selenium\Practice4-Selenium.csproj", "{BAAA17ED-F84C-45E1-B813-0595E73A832F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice5-Parsing", "Practice5-Parsing\Practice5-Parsing.csproj", "{48B24D18-7E94-4013-A8A6-BC111A720AE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice5-BookStoreParsing", "Practice5-BookStoreParsing\Practice5-BookStoreParsing.csproj", "{04085F29-5264-474B-8DEA-433C8BD9089E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,14 +73,14 @@ Global
 		{BAAA17ED-F84C-45E1-B813-0595E73A832F}.API_V2|Any CPU.Build.0 = Debug|Any CPU
 		{BAAA17ED-F84C-45E1-B813-0595E73A832F}.API_V3|Any CPU.ActiveCfg = Debug|Any CPU
 		{BAAA17ED-F84C-45E1-B813-0595E73A832F}.API_V3|Any CPU.Build.0 = Debug|Any CPU
-		{48B24D18-7E94-4013-A8A6-BC111A720AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48B24D18-7E94-4013-A8A6-BC111A720AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48B24D18-7E94-4013-A8A6-BC111A720AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48B24D18-7E94-4013-A8A6-BC111A720AE4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48B24D18-7E94-4013-A8A6-BC111A720AE4}.API_V2|Any CPU.ActiveCfg = Debug|Any CPU
-		{48B24D18-7E94-4013-A8A6-BC111A720AE4}.API_V2|Any CPU.Build.0 = Debug|Any CPU
-		{48B24D18-7E94-4013-A8A6-BC111A720AE4}.API_V3|Any CPU.ActiveCfg = Debug|Any CPU
-		{48B24D18-7E94-4013-A8A6-BC111A720AE4}.API_V3|Any CPU.Build.0 = Debug|Any CPU
+		{04085F29-5264-474B-8DEA-433C8BD9089E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04085F29-5264-474B-8DEA-433C8BD9089E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04085F29-5264-474B-8DEA-433C8BD9089E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04085F29-5264-474B-8DEA-433C8BD9089E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04085F29-5264-474B-8DEA-433C8BD9089E}.API_V2|Any CPU.ActiveCfg = Debug|Any CPU
+		{04085F29-5264-474B-8DEA-433C8BD9089E}.API_V2|Any CPU.Build.0 = Debug|Any CPU
+		{04085F29-5264-474B-8DEA-433C8BD9089E}.API_V3|Any CPU.ActiveCfg = Debug|Any CPU
+		{04085F29-5264-474B-8DEA-433C8BD9089E}.API_V3|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

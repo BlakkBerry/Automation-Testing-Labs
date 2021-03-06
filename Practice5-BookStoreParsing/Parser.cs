@@ -1,28 +1,25 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
-using NUnit.Framework;
+using Practice5_Parsing;
 
-namespace Practice5_Parsing
+namespace Practice5_BookStoreParsing
 {
-    public class Tests
+    public class Parser
     {
-        private HtmlWeb _htmlWeb;
+        private readonly HtmlWeb _htmlWeb;
 
-        [OneTimeSetUp]
-        public void InitTests()
+        public Parser(HtmlWeb htmlWeb)
         {
-            _htmlWeb = new HtmlWeb();
+            _htmlWeb = htmlWeb;
         }
-
-        [Test]
+        
         public void DownloadBooks()
         {
             var categories = GetCategories();
-            Assert.That(categories.Length != 0, "Categories was not found!");
 
             categories
                 .ToList()
@@ -37,6 +34,8 @@ namespace Practice5_Parsing
                         
                         if (!File.Exists($"C:/Users/blakk/ParsedBooks/{category.Name}/{book.Name}.pdf"))
                         {
+                            Colorize($"The download of \"{book.Name}\" from category \"{category.Name}\" has started...", ConsoleColor.DarkCyan);
+                            
                             new WebClient().DownloadFile(
                                 book.DownloadUrl,
                                 Path.Combine(path, category.Name, $"{book.Name}.pdf")
@@ -45,7 +44,7 @@ namespace Practice5_Parsing
                     });
                 });
         }
-
+        
         private Category[] GetCategories()
         {
             const string mainUrl = "https://allitbooks.net";
@@ -103,6 +102,13 @@ namespace Practice5_Parsing
             }
 
             return books;
+        }
+
+        private void Colorize(string message, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
+            Console.ResetColor();
         }
     }
 }
