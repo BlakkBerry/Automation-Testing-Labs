@@ -4,6 +4,14 @@
     &lt;TestId&gt;NUnit3x::BAAA17ED-F84C-45E1-B813-0595E73A832F::net5.0::Practice2_Selenium.Tests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::48B24D18-7E94-4013-A8A6-BC111A720AE4::net5.0::Practice5_Parsing.Tests.Test1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::48B24D18-7E94-4013-A8A6-BC111A720AE4::net5.0::Practice5_Parsing.Tests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.Tests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.Test.Testss&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.Test&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.NotepadTest.Testss&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.NotepadTest.ZoomTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.NotepadTest.CrudFile&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.NotepadTest.WriteFile&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.NotepadTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=blakk/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice4-Selenium", "Pract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice5-BookStoreParsing", "Practice5-BookStoreParsing\Practice5-BookStoreParsing.csproj", "{04085F29-5264-474B-8DEA-433C8BD9089E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice6-UIAutomation", "Practice6-UIAutomation\Practice6-UIAutomation.csproj", "{E46384A8-7363-4AE2-9FDE-DEC20BDDD584}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,14 @@ Global
 		{04085F29-5264-474B-8DEA-433C8BD9089E}.API_V2|Any CPU.Build.0 = Debug|Any CPU
 		{04085F29-5264-474B-8DEA-433C8BD9089E}.API_V3|Any CPU.ActiveCfg = Debug|Any CPU
 		{04085F29-5264-474B-8DEA-433C8BD9089E}.API_V3|Any CPU.Build.0 = Debug|Any CPU
+		{E46384A8-7363-4AE2-9FDE-DEC20BDDD584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E46384A8-7363-4AE2-9FDE-DEC20BDDD584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E46384A8-7363-4AE2-9FDE-DEC20BDDD584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E46384A8-7363-4AE2-9FDE-DEC20BDDD584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E46384A8-7363-4AE2-9FDE-DEC20BDDD584}.API_V2|Any CPU.ActiveCfg = Debug|Any CPU
+		{E46384A8-7363-4AE2-9FDE-DEC20BDDD584}.API_V2|Any CPU.Build.0 = Debug|Any CPU
+		{E46384A8-7363-4AE2-9FDE-DEC20BDDD584}.API_V3|Any CPU.ActiveCfg = Debug|Any CPU
+		{E46384A8-7363-4AE2-9FDE-DEC20BDDD584}.API_V3|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
