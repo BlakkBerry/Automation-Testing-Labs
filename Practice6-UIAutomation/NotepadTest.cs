@@ -1,10 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Threading;
-using FlaUI.Core;
-using FlaUI.Core.Tools;
-using FluentAssertions;
+﻿using System.IO;
+using FlaUI.Core.Input;
 using NUnit.Framework;
+using FlaUI.Core.Tools;
+using FlaUI.Core.WindowsAPI;
+using FluentAssertions;
 
 namespace Practice6_UIAutomation
 {
@@ -38,7 +37,7 @@ namespace Practice6_UIAutomation
             _notepad.ZoomOut();
             _notepad.GetZoomPercent().Should().Be(90, "scale has been zoomed out by 20%");
         }
-
+        
         [Test]
         public void WriteFile()
         {
@@ -50,7 +49,7 @@ namespace Practice6_UIAutomation
             
             Retry.WhileTrue(() => !File.Exists(path));
             Assert.That(File.Exists(path), "File has not been saved.");
-
+        
             _notepad.OpenDocument(path).Should().Be(text, "this text has been written to the document.");
             File.ReadAllText(path).Should().Be(text, "this text has been written to the document.");
             

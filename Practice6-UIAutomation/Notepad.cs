@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Linq;
-using System.Text.RegularExpressions;
+using FlaUI.UIA3;
 using FlaUI.Core;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
+using System.Linq;
 using FlaUI.Core.Input;
 using FlaUI.Core.Tools;
-using FlaUI.UIA3;
+using FlaUI.Core.Definitions;
+using FlaUI.Core.AutomationElements;
+using System.Text.RegularExpressions;
 
 namespace Practice6_UIAutomation
 {
     public class Notepad : IDisposable
     {
-        private Window _window;
+        private readonly Window _window;
 
         public Notepad()
         {
