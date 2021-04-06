@@ -13,6 +13,8 @@
     &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.NotepadTest.WriteFile&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::E46384A8-7363-4AE2-9FDE-DEC20BDDD584::.NETCoreApp,Version=v3.1::Practice6_UIAutomation.NotepadTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::E40A1C8B-A90E-4C91-B77C-DAE97D58212C::net5.0::Practice15_Atata.Tests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::F7DD926C-F738-46D5-A4FF-925FBB741C35::net5.0::Practice8_Apium.UnitTest1.TestMethod1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::F7DD926C-F738-46D5-A4FF-925FBB741C35::net5.0::Practice8_Apium.UnitTest1&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=blakk/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
