@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice15-Atata", "Practic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice8-Apium", "Practice8-Apium\Practice8-Apium.csproj", "{F7DD926C-F738-46D5-A4FF-925FBB741C35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice9-Specflow", "Practice9-Specflow\Practice9-Specflow.csproj", "{F442C048-C70D-4981-A0EC-7D266892F2E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,14 @@ Global
 		{F7DD926C-F738-46D5-A4FF-925FBB741C35}.API_V2|Any CPU.Build.0 = Debug|Any CPU
 		{F7DD926C-F738-46D5-A4FF-925FBB741C35}.API_V3|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7DD926C-F738-46D5-A4FF-925FBB741C35}.API_V3|Any CPU.Build.0 = Debug|Any CPU
+		{F442C048-C70D-4981-A0EC-7D266892F2E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F442C048-C70D-4981-A0EC-7D266892F2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F442C048-C70D-4981-A0EC-7D266892F2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F442C048-C70D-4981-A0EC-7D266892F2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F442C048-C70D-4981-A0EC-7D266892F2E0}.API_V2|Any CPU.ActiveCfg = Debug|Any CPU
+		{F442C048-C70D-4981-A0EC-7D266892F2E0}.API_V2|Any CPU.Build.0 = Debug|Any CPU
+		{F442C048-C70D-4981-A0EC-7D266892F2E0}.API_V3|Any CPU.ActiveCfg = Debug|Any CPU
+		{F442C048-C70D-4981-A0EC-7D266892F2E0}.API_V3|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
