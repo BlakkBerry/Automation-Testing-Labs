@@ -78,7 +78,7 @@ namespace Practice9_Specflow.Steps
         {
             var schema = JsonSchema.FromType<User>();
             var errors = schema.Validate(_dataFileContent);
-            Console.WriteLine(errors.Count);
+            errors.Count.Should().Be(0);
         }
     }
 }
